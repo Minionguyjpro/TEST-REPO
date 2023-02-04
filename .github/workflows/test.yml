@@ -12,5 +12,5 @@ jobs:
   - name: Download File Action
     uses: Minionguyjpro/Download-File-Action@main
     with:
-      url: https://example.com/
-      path: ./
+      url: https://raw.githubusercontent.com/Minionguyjpro/Download-File-Action/main/example.txt
+      path: test/
