@@ -1,0 +1,19 @@
+name: PUSH
+on: 
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+ test:
+  runs-on: ubuntu-latest
+  steps:
+  - uses: actions/checkout@v3
+  
+  - name: Download File Action
+    run: |
+       git config --global user.name '$GITHUB_TOKEN'
+       git config --global user.email '$GITHUB_TOKEN@users.noreply.github.com'
+       git init
+       git add -A
+       git commit -am "Fetch/Update NovaLauncher.apk"
+       git push -u origin $GITHUB_REF_NAME && echo Done! && exit 0
